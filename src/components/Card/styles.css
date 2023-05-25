@@ -1,0 +1,55 @@
+@import '../../assets/css/variables.css';
+@import '../../assets/css/normalize.css';
+
+.card__container{
+  background-image: linear-gradient(to bottom, var(--color-background-card), var(--color-background-gradient));
+  border-bottom: 5px solid var(--color-background-card);
+  color: var(--color-text-card);
+  border-radius: 0 0 5% 5%;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  margin-top: 50px;
+  height: 440px;
+  display: flex;
+  margin: 15px;
+  width: 90%;
+}
+
+.card__price-container{
+  border: 2px solid var(--color-text-card);
+  border-radius: 0 25px 0 25px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  font-weight: 700;
+  font-size: 22px;
+  display: flex;
+  width: 120px;
+  height: 40px;
+  top: -17px;
+}
+
+.card__image{
+  border-radius: 0 0 20px 20px;
+  margin-bottom: 10px;
+}
+
+.card__text-on-image{
+  transform: translate(-50%, -50%);
+  position: absolute;
+  text-align: center;
+  bottom: -30px;
+  height: 60px;
+  width: 100%;
+  left: 50%;
+}
+
+.card__text-ofert{
+  background-color: var(--color-background-ofert);
+  color: var(--color-text-card);
+}
+
+.card__name-product{
+  color: var(--color-text-black);
+}
