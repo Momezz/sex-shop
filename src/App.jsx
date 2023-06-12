@@ -1,10 +1,10 @@
-import Card from './components/Card/Card';
+import Carousel from './components/Carousel/Carousel.jsx';
 
 const App = () => {
   return (
-    <div>
-          <Card />
-    </div>
+    <main>
+      <Carousel />
+    </main>
   );
 }
 
