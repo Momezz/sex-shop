@@ -1,11 +1,12 @@
 import Card from './Card';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleChevronRight, faCircleChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import data from '../public/assets/data.json';
 import { useState, useEffect } from 'react';
+import styles from './Carousel.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleChevronRight, faCircleChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 const Carousel = () => {
-  const [width, setWidth] = useState();
+  const [width, setWidth] = useState(1);
   const [category, setCategory] = useState('');
   const [start, setStart] = useState(0);
 
@@ -41,19 +42,19 @@ const Carousel = () => {
   const filteredProducts = data.filter((product) => product.category === category);
   const elements = data.slice(start, width);
   return (
-    <section className="carousel__content">
-      <div className="carousel__btn-category">
-        <button className="carousel__btn-option" type="submit" value="vibradores" onClick={handleCategoryChange}>Vibradores</button>
-        <button className="carousel__btn-option" type="submit" value="consoladores" onClick={handleCategoryChange}>Consoladores</button>
-        <button className="carousel__btn-option" type="submit" value="juguetesAnales" onClick={handleCategoryChange}>Juguetes Anales</button>
-        <button className="carousel__btn-option" type="submit" value="LenceriaSexy" onClick={handleCategoryChange}>Lencería Sexy</button>
-        <button className="carousel__btn-option" type="submit" value="cosmeticos" onClick={handleCategoryChange}>Cosméticos</button>
+    <section className={styles.carousel__content}>
+      <div className={styles.carousel__btn_category}>
+        <button className={styles.carousel__btn_option} type="submit" value="vibradores" onClick={handleCategoryChange}>Vibradores</button>
+        <button className={styles.carousel__btn_option} type="submit" value="consoladores" onClick={handleCategoryChange}>Consoladores</button>
+        <button className={styles.carousel__btn_option} type="submit" value="juguetesAnales" onClick={handleCategoryChange}>Juguetes Anales</button>
+        <button className={styles.carousel__btn_option} type="submit" value="LenceriaSexy" onClick={handleCategoryChange}>Lencería Sexy</button>
+        <button className={styles.carousel__btn_option} type="submit" value="cosmeticos" onClick={handleCategoryChange}>Cosméticos</button>
       </div>
-      <article className="carousel__btn-position">
-        <ul className="carousel__ul">
+      <article className={styles.carousel__btn_position}>
+        <ul className={styles.carousel__ul}>
           {
             elements.map((element) => (
-              <li className="carousel__li" key={element.id}>
+              <li className={styles.carousel__li} key={element.id}>
                 <Card
                   title={element.title}
                   category={element.category}
@@ -64,15 +65,14 @@ const Carousel = () => {
             ))
           }
         </ul>
-        <div className="carousel__btn-cont">
-          <div className="carousel__arrows">
-            <button className="carousel__btn" onClick={handleLast}><i><FontAwesomeIcon icon={faCircleChevronLeft} /></i></button>
-            <button className="carousel__btn" onClick={handleNext}><i><FontAwesomeIcon icon={faCircleChevronRight} /></i></button>
+        <div className={styles.carousel__btn_cont}>
+          <div className={styles.carousel__arrows}>
+            <button className={styles.carousel__btn} onClick={handleLast}><i><FontAwesomeIcon icon={faCircleChevronLeft} /></i></button>
+            <button className={styles.carousel__btn} onClick={handleNext}><i><FontAwesomeIcon icon={faCircleChevronRight} /></i></button>
           </div>
-          <h2 className="movies-list__category-title">{category}</h2>
+          <h2 className={styles.movies_list__category_title}>{category}</h2>
         </div>
       </article>
-
     </section>
   )
 }
