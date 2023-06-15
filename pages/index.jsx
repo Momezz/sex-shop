@@ -2,11 +2,6 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { Inter } from '@next/font/google';
 import Carousel from '../components/Carousel';
-
-
-// const inter = Inter({ subsets: ['latin']});
-
-
 const Index = (porps) => {
 
   return (
